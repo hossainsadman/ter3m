@@ -1,0 +1,14 @@
+#define ENCODER 2	// digital input to arduino from encoder; the Vcc and GND of encoder must be plugged into the arduino
+
+void setup() {
+    set pin mode of LED_BUILTIN to OUTPUT
+    set pin mode of ENCODER to INPUT
+    initialize the serial monitor to 9600 bits per second (baud rate)
+}
+
+void loop() {
+    declare value as int and initialize to zero
+    value = do a digital read from ENCODER
+    print value in serial monitor
+}
+

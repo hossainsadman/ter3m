@@ -1,0 +1,26 @@
+
+#define LED 9
+
+int fadeAmount = 5;
+int brightness = 0;
+
+void setup() {
+    // declare pin 9 to be an output
+    pinMode(LED, OUTPUT);
+}
+
+void loop() {
+    // set the brightness ofled
+    analogWrite(LED, brightness);
+
+    // change the brightness for next iteratio of the loop
+    brightness = brightness + fadeAmount;
+
+    // reverse the direction of the fading at the ends of each fade
+    if (brightness <= 0 || brightness >= 255) {
+    fadeAmount = fadeAmount * -1;
+    }
+
+    // delay for 30 ms
+    delay(30);
+}

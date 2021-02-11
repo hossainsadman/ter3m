@@ -1,0 +1,29 @@
+#define ENCODER 2	// digital input to arduino from encoder; the Vcc and GND of encoder must be plugged into the arduino
+
+define SPOKES_IN_ENCODER to 20
+
+void setup() {
+    set pin mode of LED_BUILTIN to OUTPUT
+    set pin mode of ENCODER to INPUT
+    initialize the serial monitor to 9600 bits per second (baud rate)
+}
+
+void oneRevolution() {
+    declare value as int and initialize to zero
+    declare reads as int and initialize to zero
+
+    do {
+        value = do a digital read from ENCODER
+        do {
+        } while value equals a digital read from ENCODER
+        increase reads by 1
+    } while (reads is not equal to twice the number of spokes)
+
+    print the value of reads in the serial monitor
+}
+
+
+void loop() {
+    call the function oneRevolution
+}
+

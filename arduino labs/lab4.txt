@@ -1,0 +1,32 @@
+int currentByte = 33;
+
+void setup() {
+  // initialize serial port and wait for it to open
+  Serial.begin(9600);
+  while (!Serial) {
+    ; // wait for serial port to connect
+  }
+
+  // print title
+  Serial.println("ASCII Table - Character Map");
+  Serial.println("Char\tDEC\tHEX\tOCT\tBIN");
+}
+
+void loop() {
+  // print the binary version of the byte starting at 33 which is '!'
+  Serial.write(currentByte);
+  Serial.print("\t");
+  Serial.print(currentByte, DEC);
+  Serial.print("\t");
+  Serial.print(currentByte, HEX);
+  Serial.print("\t");
+  Serial.print(currentByte, OCT);
+  Serial.print("\t");
+  Serial.print(currentByte, BIN);
+  Serial.print("\n");
+
+  if (currentByte == 126) {
+    for (;;);
+  }
+  currentByte++;
+}

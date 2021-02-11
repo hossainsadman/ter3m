@@ -1,0 +1,18 @@
+int c = 0;
+
+void setup() {
+  Serial.begin(9600); // open serial port, set data rate to 9600 bps
+
+}
+
+void loop() {
+  if (Serial.available() > 0) {
+    c = Serial.read();
+
+    Serial.print("I received: ");
+    int n = Serial.write(c);
+    Serial.print("\t");
+    Serial.print(n);
+    Serial.print(" character(s)\n");
+  }
+}
